@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@my/ui/*": ["./packages/ui/*"],
+      "app/*": ["./packages/app/*"]
+    }
+  },
+  "extends": "expo/tsconfig.base",
+  "exclude": ["**/node_modules", "**/dist", "**/types"]
+}

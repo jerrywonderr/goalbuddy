@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "goalbuddy",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native-svg": "13.9.0",
+    "react-native-web": "0.19.6"
+  },
+  "scripts": {
+    "native": "cd apps/goalbuddy-app && yarn start",
+    "native:prod": "cd apps/goalbuddy-app && yarn start --no-dev --minify"
+  },
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "react": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18"
+  }
+}
