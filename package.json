@@ -18,7 +18,11 @@
   },
   "packageManager": "yarn@4.1.1",
   "dependencies": {
-    "react": "18.2.0"
+    "@hookform/resolvers": "^3.6.0",
+    "react": "18.2.0",
+    "react-hook-form": "^7.52.0",
+    "yup": "^1.4.0",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/react": "^18"
