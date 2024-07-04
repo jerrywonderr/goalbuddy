@@ -1,14 +1,15 @@
 {
+  "extends": "expo/tsconfig.base",
+  "exclude": ["**/node_modules", "**/dist", "**/types"],
   "compilerOptions": {
+    "strict": true,
     "jsx": "react-jsx",
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "paths": {
-      "@my/ui/*": ["./packages/ui/*"],
-      "app/*": ["./packages/app/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "extends": "expo/tsconfig.base",
-  "exclude": ["**/node_modules", "**/dist", "**/types"]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
