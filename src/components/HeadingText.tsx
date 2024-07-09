@@ -7,6 +7,14 @@ type IHeadingTextProps = PropsWithChildren<{
   fontWeight?: keyof typeof config.tokens.fontWeights;
 }>;
 
-export const H2 = () => {
-  return <Heading fontSize="$3.5xl" fontWeight="$bold" lineHeight="3xl" />;
+export const H2 = ({ ...props }: IHeadingTextProps) => {
+  return <Heading size="3.5xl" {...props} />;
+};
+
+export const H3 = ({ ...props }: IHeadingTextProps) => {
+  return <Heading size="1.5lg" fontFamily="Inter" {...props} />;
+};
+
+export const H4 = ({ ...props }: IHeadingTextProps) => {
+  return <Heading size="lg" fontFamily="Inter" {...props} />;
 };

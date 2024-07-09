@@ -1229,6 +1229,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo-google-fonts/inter@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "@expo-google-fonts/inter@npm:0.2.3"
+  checksum: 10c0/f26f071896c18adda4e479ec31192053163b39a2c5cbf7b2d5ecb7d6eef63262ba8aaf462897f503d06151f059c1ead01573797e709afb6d0d20555238625365
+  languageName: node
+  linkType: hard
+
 "@expo/bunyan@npm:^4.0.0":
   version: 4.0.0
   resolution: "@expo/bunyan@npm:4.0.0"
@@ -7740,6 +7747,7 @@ __metadata:
   resolution: "goalbuddy@workspace:."
   dependencies:
     "@babel/core": "npm:^7.20.0"
+    "@expo-google-fonts/inter": "npm:^0.2.3"
     "@expo/vector-icons": "npm:^14.0.2"
     "@gluestack-style/react": "npm:^1.0.56"
     "@gluestack-ui/config": "npm:^1.1.18"

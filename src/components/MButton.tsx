@@ -26,3 +26,11 @@ export const LinkButton = ({ title }: IMButton) => {
     </Button>
   );
 };
+
+export const SecondaryButton = ({ title }: IMButton) => {
+  return (
+    <Button action="tertiary">
+      <ButtonText color="$buttonTextSecondaryLight">{title}</ButtonText>
+    </Button>
+  );
+};

@@ -95,6 +95,13 @@ export const Heading = createStyle({
         lineHeight: "$3xl",
       },
 
+      "1.5lg": {
+        //@ts-ignore
+        props: { as: H4 },
+        fontSize: "$1.5xl",
+        lineHeight: "$2xl",
+      },
+
       lg: {
         //@ts-ignore
         props: { as: H4 },
