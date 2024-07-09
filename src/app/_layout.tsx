@@ -21,7 +21,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import GlueStackProvider from "@/providers/GlueStackProvider";
+import UIProvider from "@/providers/UIProvider";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -47,6 +47,8 @@ export default function RootLayout() {
     if (loaded) {
       SplashScreen.hideAsync();
     }
+
+    console.log(loaded);
   }, [loaded]);
 
   if (!loaded) {
@@ -55,12 +57,12 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <GlueStackProvider>
+      <UIProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
-      </GlueStackProvider>
+      </UIProvider>
     </ThemeProvider>
   );
 }

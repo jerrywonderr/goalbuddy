@@ -5,28 +5,28 @@ import {
   PrimaryButton,
   SecondaryButton,
 } from "@/components/MButton";
-import { HStack, ScrollView, VStack } from "@gluestack-ui/themed";
+import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const Playground = () => {
   return (
-    <VStack>
+    <View>
       <SafeAreaView />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <HStack space="sm">
-          <PrimaryButton title="Press me too" />
-          <LinkButton title="I look like a link" />
-          <SecondaryButton title="I look like a link" />
-        </HStack>
-        <VStack>
+        <View>
+          <PrimaryButton>Press me too</PrimaryButton>
+          <LinkButton>I look like a link</LinkButton>
+          <SecondaryButton>I look like a link</SecondaryButton>
+        </View>
+        <View>
           <P1>Heading One</P1>
           <P2>I am a regular body text</P2>
           <H2>I am heading 2</H2>
           <H3>I am heading 3</H3>
           <H4>I am heading 4</H4>
-        </VStack>
+        </View>
       </ScrollView>
-    </VStack>
+    </View>
   );
 };
 

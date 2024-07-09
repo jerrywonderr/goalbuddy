@@ -1,18 +1,17 @@
+import { H2, H3 } from "@/components/HeadingText";
 import { Link, Stack } from "expo-router";
-import { StyleSheet } from "react-native";
-
-import { Box, Heading } from "@gluestack-ui/themed";
+import { StyleSheet, View } from "react-native";
 
 export default function NotFoundScreen() {
   return (
     <>
       <Stack.Screen options={{ title: "Oops!" }} />
-      <Box style={styles.container}>
-        <Heading>This screen doesn't exist.</Heading>
+      <View style={styles.container}>
+        <H2>This screen doesn't exist.</H2>
         <Link href="/" style={styles.link}>
-          <Heading fontVariant={["small-caps"]}>Go to home screen!</Heading>
+          <H3>Go to home screen!</H3>
         </Link>
-      </Box>
+      </View>
     </>
   );
 }

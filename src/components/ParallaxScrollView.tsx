@@ -1,5 +1,5 @@
 import type { PropsWithChildren, ReactElement } from "react";
-import { StyleSheet, useColorScheme } from "react-native";
+import { StyleSheet, View, useColorScheme } from "react-native";
 import Animated, {
   interpolate,
   useAnimatedRef,
@@ -8,7 +8,6 @@ import Animated, {
 } from "react-native-reanimated";
 
 import { ThemedView } from "@/components/ThemedView";
-import { Box } from "@gluestack-ui/themed";
 
 const HEADER_HEIGHT = 250;
 
@@ -59,7 +58,7 @@ export default function ParallaxScrollView({
         >
           {headerImage}
         </Animated.View>
-        <Box style={styles.content}>{children}</Box>
+        <View style={styles.content}>{children}</View>
       </Animated.ScrollView>
     </ThemedView>
   );

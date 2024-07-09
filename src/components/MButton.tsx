@@ -1,36 +1,16 @@
-import { Button, ButtonText } from "@gluestack-ui/themed";
+import { PropsWithChildren } from "react";
+import { Button } from "react-native-paper";
 
-interface IMButton {
-  title: string;
-}
+type IMButton = PropsWithChildren<{}>;
 
-export const PrimaryButton = ({ title }: IMButton) => {
-  return (
-    <Button action="primary">
-      <ButtonText color="$buttonTextPrimaryLight">{title}</ButtonText>
-    </Button>
-  );
+export const PrimaryButton = ({ children }: IMButton) => {
+  return <Button mode="contained">{children}</Button>;
 };
 
-export const LinkButton = ({ title }: IMButton) => {
-  return (
-    <Button variant="link" size="xs">
-      <ButtonText
-        textDecorationLine="underline"
-        fontWeight="$normal"
-        color="$bodyTextLight"
-        // fontSize="$2xs"
-      >
-        {title}
-      </ButtonText>
-    </Button>
-  );
+export const LinkButton = ({ children }: IMButton) => {
+  return <Button mode="text">{children}</Button>;
 };
 
-export const SecondaryButton = ({ title }: IMButton) => {
-  return (
-    <Button action="tertiary">
-      <ButtonText color="$buttonTextSecondaryLight">{title}</ButtonText>
-    </Button>
-  );
+export const SecondaryButton = ({ children }: IMButton) => {
+  return <Button mode="contained">{children}</Button>;
 };

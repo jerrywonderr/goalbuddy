@@ -1,22 +1,16 @@
-import { config } from "@/config/gluestack-ui.config";
-import { Text } from "@gluestack-ui/themed";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
+import { StyleProp, TextStyle } from "react-native";
+import { Text } from "react-native-paper";
 
-type ITextProps = PropsWithChildren<{
-  color?: keyof typeof config.tokens.colors;
-  fontWeight?: keyof typeof config.tokens.fontWeights;
-}>;
-
-export const P1 = ({
-  color = "bodyTextLight",
-  fontWeight = "normal",
-  ...props
-}: ITextProps) => {
-  return (
-    <Text size="md" color={`$${color}`} fontWeight={fontWeight} {...props} />
-  );
+type ITextProps = {
+  children: ReactNode;
+  style?: StyleProp<TextStyle>;
 };
 
-export const P2 = ({ color = "bodyTextLight", ...props }: ITextProps) => {
-  return <Text color={`$${color}`} size="sm" fontWeight="$medium" {...props} />;
+export const P1 = ({ style, ...props }: ITextProps) => {
+  return <Text variant="displayLarge" style={[style]} {...props} />;
+};
+
+export const P2 = ({ style, ...props }: ITextProps) => {
+  return <Text style={[style]} {...props} />;
 };

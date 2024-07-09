@@ -1,20 +1,38 @@
-import { config } from "@/config/gluestack-ui.config";
-import { Heading } from "@gluestack-ui/themed";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
+import { StyleProp, TextStyle } from "react-native";
+import { Text } from "react-native-paper";
 
-type IHeadingTextProps = PropsWithChildren<{
-  color?: keyof typeof config.tokens.colors;
-  fontWeight?: keyof typeof config.tokens.fontWeights;
-}>;
-
-export const H2 = ({ ...props }: IHeadingTextProps) => {
-  return <Heading size="3.5xl" {...props} />;
+type IHeadingTextProps = {
+  children: ReactNode;
+  style?: StyleProp<TextStyle>;
 };
 
-export const H3 = ({ ...props }: IHeadingTextProps) => {
-  return <Heading size="1.5lg" fontFamily="Inter" {...props} />;
+export const H2 = ({ style, ...props }: IHeadingTextProps) => {
+  return (
+    <Text
+      variant="displayLarge"
+      style={[{ fontFamily: "Inter" }, style]}
+      {...props}
+    />
+  );
 };
 
-export const H4 = ({ ...props }: IHeadingTextProps) => {
-  return <Heading size="lg" fontFamily="Inter" {...props} />;
+export const H3 = ({ style, ...props }: IHeadingTextProps) => {
+  return (
+    <Text
+      variant="displayLarge"
+      style={[{ fontFamily: "Inter" }, style]}
+      {...props}
+    />
+  );
+};
+
+export const H4 = ({ style, ...props }: IHeadingTextProps) => {
+  return (
+    <Text
+      variant="displayLarge"
+      style={[{ fontFamily: "Inter" }, style]}
+      {...props}
+    />
+  );
 };
