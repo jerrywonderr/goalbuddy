@@ -10,8 +10,8 @@ import {
   Inter_900Black,
 } from "@expo-google-fonts/inter";
 import {
-  DarkTheme,
   DefaultTheme,
+  DarkTheme as RDarkTheme,
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
@@ -22,6 +22,8 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import UIProvider from "@/providers/UIProvider";
+import { darkTheme, lightTheme } from "@/theme";
+import { adaptNavigationTheme } from "react-native-paper";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -43,12 +45,17 @@ export default function RootLayout() {
     Inter_900Black,
   });
 
+  const { LightTheme, DarkTheme } = adaptNavigationTheme({
+    reactNavigationLight: DefaultTheme,
+    reactNavigationDark: RDarkTheme,
+    materialDark: darkTheme,
+    materialLight: lightTheme,
+  });
+
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
     }
-
-    console.log(loaded);
   }, [loaded]);
 
   if (!loaded) {
@@ -56,13 +63,13 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <UIProvider>
+    <UIProvider>
+      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : LightTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
         </Stack>
-      </UIProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </UIProvider>
   );
 }
