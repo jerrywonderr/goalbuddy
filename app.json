@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "GoalBuddy",
+    "name": "Goal Buddy",
     "slug": "GoalBuddy",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#7B53FF"
-      }
+      },
+      "package": "com.goalbuddy.app"
     },
     "web": {
       "bundler": "metro",
