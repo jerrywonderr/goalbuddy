@@ -64,7 +64,7 @@ export default function RootLayout() {
 
   return (
     <UIProvider>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : LightTheme}>
+      <ThemeProvider value={LightTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />
