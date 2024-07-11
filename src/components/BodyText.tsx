@@ -8,9 +8,19 @@ type ITextProps = {
 };
 
 export const P1 = ({ style, ...props }: ITextProps) => {
-  return <Text variant="displayLarge" style={[style]} {...props} />;
+  return <Text variant="bodyLarge" style={[style]} {...props} />;
 };
 
 export const P2 = ({ style, ...props }: ITextProps) => {
-  return <Text style={[style]} {...props} />;
+  return <Text variant="bodyMedium" style={[style]} {...props} />;
+};
+
+export const P2Bold = ({ style, ...props }: ITextProps) => {
+  return (
+    <Text
+      variant="bodyMedium"
+      style={[{ fontFamily: "Inter_500Medium" }, style]}
+      {...props}
+    />
+  );
 };

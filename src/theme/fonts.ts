@@ -28,7 +28,7 @@ const fonts: { [x: string]: Partial<MD3Type> } = {
     lineHeight: 64,
   },
   headlineSmall: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontSize: 24,
     // fontWeight: "400",
     letterSpacing: 0,
@@ -42,7 +42,7 @@ const fonts: { [x: string]: Partial<MD3Type> } = {
     lineHeight: 36,
   },
   headlineLarge: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontSize: 32,
     // fontWeight: "400",
     letterSpacing: 0,
@@ -63,7 +63,7 @@ const fonts: { [x: string]: Partial<MD3Type> } = {
     lineHeight: 24,
   },
   titleLarge: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontSize: 22,
     // fontWeight: "400",
     letterSpacing: 0,
