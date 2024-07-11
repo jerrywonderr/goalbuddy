@@ -18,12 +18,13 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
+import { AuthProvider } from "@/providers/AuthProvider";
 import UIProvider from "@/providers/UIProvider";
 import { darkTheme, lightTheme } from "@/theme";
 import { adaptNavigationTheme } from "react-native-paper";
+import "react-native-reanimated";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -63,13 +64,16 @@ export default function RootLayout() {
   }
 
   return (
-    <UIProvider>
-      <ThemeProvider value={LightTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ThemeProvider>
-    </UIProvider>
+    <AuthProvider>
+      <UIProvider>
+        <ThemeProvider value={LightTheme}>
+          <Stack screenOptions={{ headerShown: false }}>
+            {/* <Stack.Screen name="walkthrough" /> */}
+            {/* <Stack.Screen name="(app)" /> */}
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </ThemeProvider>
+      </UIProvider>
+    </AuthProvider>
   );
 }
