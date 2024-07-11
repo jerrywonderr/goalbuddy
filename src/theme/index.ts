@@ -57,6 +57,7 @@ export const lightTheme = {
     text2: "#1F133F",
     light1: "#C6C6C6",
     white: "#fff",
+    bg1: "#7b53ff",
   },
 };
 
@@ -114,5 +115,6 @@ export const darkTheme: typeof lightTheme = {
     text2: "#1F133F",
     light1: "#C6C6C6",
     white: "#fff",
+    bg1: "#7b53ff",
   },
 };

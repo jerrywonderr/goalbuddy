@@ -1,10 +1,25 @@
 import BaseView from "@/components/BaseView";
-import { H2 } from "@/components/HeadingText";
+import GettingStarted from "@/features/walkthrough/GettingStarted";
+import Welcome from "@/features/walkthrough/Welcome";
+import useStepper from "@/hooks/useStepper";
+import { useAppTheme } from "@/providers/UIProvider";
 
 const WalkthroughScreen = () => {
+  const { step, nextStep } = useStepper();
+  const theme = useAppTheme();
+
+  const render = () => {
+    switch (step) {
+      case 2:
+        return <GettingStarted />;
+      default:
+        return <Welcome onPress={nextStep} />;
+    }
+  };
+
   return (
-    <BaseView addSafeArea>
-      <H2>Goal Buddy!</H2>
+    <BaseView style={{ backgroundColor: theme.colors.bg1 }} addSafeArea>
+      {render()}
     </BaseView>
   );
 };

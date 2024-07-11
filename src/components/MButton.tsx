@@ -44,8 +44,33 @@ export const LinkButton = ({
     <CustomButton
       mode="text"
       textColor={theme.colors.text1}
-      style={[style]}
+      style={[{ padding: 0 }, style]}
       labelStyle={[styles.linkButtonText, labelStyle]}
+      contentStyle={{ minHeight: 0, backgroundColor: "red" }}
+      {...props}
+    >
+      {children}
+    </CustomButton>
+  );
+};
+
+export const RoundedSecondaryButton = ({
+  children,
+  style,
+  ...props
+}: IMButton) => {
+  const theme = useAppTheme();
+  return (
+    <CustomButton
+      mode="contained"
+      textColor={theme.colors.onSecondaryContainer}
+      style={[
+        {
+          backgroundColor: theme.colors.secondaryContainer,
+          borderRadius: 32,
+        },
+        style,
+      ]}
       {...props}
     >
       {children}
@@ -62,7 +87,6 @@ export const SecondaryButton = ({ children, style, ...props }: IMButton) => {
       style={[
         {
           backgroundColor: theme.colors.secondaryContainer,
-          borderRadius: 32,
         },
         style,
       ]}
@@ -95,14 +119,14 @@ export const OutlinedButton = ({ children, style, ...props }: IMButton) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 8,
+    borderRadius: 4,
   },
   textBase: {
     fontFamily: "Inter_700Bold",
     fontSize: 16,
     lineHeight: 24,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 4,
+    paddingVertical: 3,
     letterSpacing: 0.5,
   },
   linkButtonText: {
@@ -110,6 +134,8 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     fontSize: 11,
     lineHeight: 16,
+    paddingHorizontal: 0,
+    paddingVertical: 0,
   },
   outlinedButton: {
     backgroundColor: "#0000",

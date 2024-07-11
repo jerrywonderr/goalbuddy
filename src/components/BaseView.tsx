@@ -1,12 +1,15 @@
-import { ReactNode } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ViewProps } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-type TBaseView = { children: ReactNode; addSafeArea?: boolean };
+type TBaseView = { addSafeArea?: boolean };
 
-const BaseView = ({ children, addSafeArea = false }: TBaseView) => {
+const BaseView = ({
+  children,
+  style: containerStyle,
+  addSafeArea = false,
+}: TBaseView & ViewProps) => {
   return (
-    <View style={[styles.base]}>
+    <View style={[styles.base, containerStyle]}>
       {addSafeArea ? <SafeAreaView /> : null}
       {children}
     </View>

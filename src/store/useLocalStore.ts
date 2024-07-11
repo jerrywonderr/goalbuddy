@@ -12,7 +12,7 @@ export const useLocalStore = create<IUseLocalStore>()(
   persist(
     (set, get) => ({
       firstOpen: true,
-      onFirstOpen: () => set({ firstOpen: true }),
+      onFirstOpen: () => set({ firstOpen: false }),
     }),
     {
       name: "local-store",

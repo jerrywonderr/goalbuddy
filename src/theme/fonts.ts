@@ -35,7 +35,7 @@ const fonts: { [x: string]: Partial<MD3Type> } = {
     lineHeight: 32,
   },
   headlineMedium: {
-    fontFamily: "Inter",
+    fontFamily: "Inter_700Bold",
     fontSize: 28,
     // fontWeight: "400",
     letterSpacing: 0,

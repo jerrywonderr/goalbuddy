@@ -24,3 +24,17 @@ export const P2Bold = ({ style, ...props }: ITextProps) => {
     />
   );
 };
+
+export const SmallText = ({ style, ...props }: ITextProps) => {
+  return <Text variant="bodySmall" style={[style]} {...props} />;
+};
+
+export const SmallLink = ({ style, ...props }: ITextProps) => {
+  return (
+    <Text
+      variant="bodySmall"
+      style={[{ textDecorationLine: "underline" }, style]}
+      {...props}
+    />
+  );
+};
