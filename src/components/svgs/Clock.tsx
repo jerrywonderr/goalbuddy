@@ -1,6 +1,6 @@
 import Svg, { Path } from "react-native-svg";
 
-const CaretRight = (props: any) => (
+const Clock = (props: any) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={12}
@@ -8,13 +8,13 @@ const CaretRight = (props: any) => (
     fill="none"
     {...props}
   >
+    <Path stroke="currentColor" d="M6 11A5 5 0 1 0 6 1a5 5 0 0 0 0 10Z" />
     <Path
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
-      d="M6 4s4 2.946 4 4c0 1.054-4 4-4 4"
+      d="M6 4v2l1 1"
     />
   </Svg>
 );
-export default CaretRight;
+export default Clock;

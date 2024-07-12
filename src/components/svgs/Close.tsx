@@ -1,6 +1,6 @@
 import Svg, { Path } from "react-native-svg";
 
-const CaretRight = (props: any) => (
+const Close = (props: any) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={12}
@@ -13,8 +13,8 @@ const CaretRight = (props: any) => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
-      d="M6 4s4 2.946 4 4c0 1.054-4 4-4 4"
+      d="m12.667 3.333-9.334 9.333m0-9.333 9.334 9.333"
     />
   </Svg>
 );
-export default CaretRight;
+export default Close;

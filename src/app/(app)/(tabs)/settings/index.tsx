@@ -1,36 +1,24 @@
+import BaseScrollView from "@/components/containers/BaseScrollView";
 import BaseView from "@/components/containers/BaseView";
 import YStack from "@/components/containers/YStack";
-import SettingsHeaderItem from "@/features/settings/SettingsHeaderItem";
-import SettingsItem from "@/features/settings/SettingsItem";
+import About from "@/features/settings/About";
+import Account from "@/features/settings/Account";
+import Extras from "@/features/settings/Extras";
+import Reminder from "@/features/settings/Reminder";
 import { useAppTheme } from "@/providers/UIProvider";
-import { router } from "expo-router";
 
 const Settings = () => {
   const theme = useAppTheme();
   return (
     <BaseView>
-      <YStack style={{ rowGap: 12 }}>
-        <SettingsHeaderItem>Extras</SettingsHeaderItem>
-        <YStack
-          style={{
-            borderWidth: 1,
-            borderRadius: 12,
-            borderColor: theme.colors.grey1,
-            rowGap: 3,
-          }}
-        >
-          <SettingsItem
-            label="Playground"
-            onPress={() => router.push("/settings/play")}
-            showDivider
-          />
-          <SettingsItem
-            label="Explore"
-            onPress={() => router.push("/settings/explore")}
-            showDivider={false}
-          />
+      <BaseScrollView>
+        <YStack style={{ rowGap: 32, paddingTop: 24 }}>
+          <Reminder />
+          <Account />
+          <About />
+          <Extras />
         </YStack>
-      </YStack>
+      </BaseScrollView>
     </BaseView>
   );
 };
