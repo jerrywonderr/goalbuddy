@@ -64,9 +64,7 @@ const RequestSent = () => {
         <H5 style={{ marginTop: 12 }}>Forgot your password?</H5>
         <P2Bold>A password reset link has been sent to your email.</P2Bold>
         <Center style={{ marginVertical: 36 }}>
-          <LinkButton onPress={() => router.push("signin")}>
-            Go back to login
-          </LinkButton>
+          <LinkButton onPress={router.back}>Go back to login</LinkButton>
         </Center>
       </YStack>
     </View>

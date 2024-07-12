@@ -7,6 +7,7 @@ import Center from "@/components/containers/Center";
 import YStack from "@/components/containers/YStack";
 import PasswordField from "@/components/form/PasswordField";
 import TextField from "@/components/form/TextField";
+import useAuth from "@/hooks/useAuth";
 import usePreventBackAction from "@/hooks/usePreventBackAction";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormProvider, useForm } from "react-hook-form";
@@ -26,15 +27,18 @@ const schema = yup.object().shape({
   cPassword: yup
     .string()
     .oneOf([yup.ref("password")], "Passwords do not match")
-    .trim()
     .required("Confirm password field is required"),
 });
 
 const SignUp = () => {
   const methods = useForm({ mode: "all", resolver: yupResolver(schema) });
+  const { login } = useAuth();
   usePreventBackAction();
 
-  const onSignUp = () => {};
+  const onSignUp = () => {
+    const { email, password } = methods.getValues();
+    return login(email, password);
+  };
 
   return (
     <BaseView>

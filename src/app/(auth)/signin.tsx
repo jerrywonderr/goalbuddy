@@ -7,6 +7,7 @@ import Center from "@/components/containers/Center";
 import YStack from "@/components/containers/YStack";
 import PasswordField from "@/components/form/PasswordField";
 import TextField from "@/components/form/TextField";
+import useAuth from "@/hooks/useAuth";
 import usePreventBackAction from "@/hooks/usePreventBackAction";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { router } from "expo-router";
@@ -21,8 +22,12 @@ const schema = yup.object().shape({
 const SignIn = () => {
   const methods = useForm({ mode: "all", resolver: yupResolver(schema) });
   usePreventBackAction();
+  const { login } = useAuth();
 
-  const onSignIn = () => {};
+  const onSignIn = () => {
+    const { email, password } = methods.getValues();
+    return login(email, password);
+  };
 
   return (
     <BaseView>

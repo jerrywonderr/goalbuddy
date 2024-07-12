@@ -1,4 +1,4 @@
-import { H2 } from "@/components/HeadingText";
+import AppLoading from "@/components/AppLoading";
 import useAuth from "@/hooks/useAuth";
 import { Stack } from "expo-router";
 
@@ -6,7 +6,7 @@ export default function AppLayout() {
   const { authenticated, isLoading } = useAuth();
 
   if (isLoading || !authenticated) {
-    return <H2>Loading...</H2>;
+    return <AppLoading />;
   }
 
   return (
