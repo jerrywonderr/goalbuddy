@@ -4,7 +4,12 @@ const XStack = ({ style, ...props }: ViewProps) => {
   return (
     <View
       style={[
-        { display: "flex", flexDirection: "row", flexWrap: "wrap" },
+        {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          columnGap: 12,
+        },
         style,
       ]}
       {...props}

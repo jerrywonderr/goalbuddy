@@ -24,6 +24,17 @@ export const H5 = ({ style, ...props }: IHeadingTextProps) => {
   return <Text variant="titleLarge" style={[style]} {...props} />;
 };
 
+export const H6 = ({ style, ...props }: IHeadingTextProps) => {
+  const theme = useAppTheme();
+  return (
+    <Text
+      variant="titleMedium"
+      style={[{ color: theme.colors.text3 }, style]}
+      {...props}
+    />
+  );
+};
+
 export const LabelLarge = ({ style, ...props }: IHeadingTextProps) => {
   return <Text variant="labelLarge" style={[style]} {...props} />;
 };

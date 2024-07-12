@@ -1,56 +1,62 @@
-import { Image, Platform, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import BaseView from "@/components/containers/BaseView";
+import XStack from "@/components/containers/XStack";
+import HeaderTitle from "@/components/navigation/HeaderTitle";
+import Analytics from "@/components/svgs/Analytics";
+import Buddies from "@/components/svgs/Buddies";
+import EmptyState from "@/features/home/EmptyState";
+import { useAppTheme } from "@/providers/UIProvider";
+import { Tabs } from "expo-router";
+import { Icon, IconButton } from "react-native-paper";
+import { Shadow } from "react-native-shadow-2";
+
+const HeaderRight = () => {
+  return (
+    <XStack style={{ alignItems: "center", columnGap: 0 }}>
+      <IconButton onPress={() => console.log("ME")} icon={() => <Buddies />} />
+      <IconButton
+        onPress={() => console.log("ME")}
+        icon={() => <Analytics />}
+      />
+    </XStack>
+  );
+};
 
 export default function HomeScreen() {
+  const theme = useAppTheme();
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
-        />
-      }
-    >
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          to see changes. Press{" "}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: "cmd + d", android: "cmd + m" })}
-          </ThemedText>{" "}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{" "}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{" "}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{" "}
-          directory. This will move the current{" "}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{" "}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <BaseView addSafeArea>
+      <Tabs.Screen
+        options={{
+          headerTitle: () => <HeaderTitle>Hi, DivineFortune</HeaderTitle>,
+          headerLeft: () => (
+            <Icon
+              source="face-man-profile"
+              size={36}
+              color={theme.colors.primary}
+            />
+          ),
+
+          headerRight: () => <HeaderRight />,
+        }}
+      />
+      <EmptyState />
+      <View
+        style={{ position: "absolute", bottom: "6%", right: 0, padding: 12 }}
+      >
+        <Shadow style={{ borderRadius: 100 }}>
+          <IconButton
+            iconColor={theme.colors.onPrimary}
+            style={{ backgroundColor: theme.colors.primary, margin: 0 }}
+            icon="plus"
+            onPress={() => console.log("ME")}
+            size={36}
+          />
+        </Shadow>
+      </View>
+    </BaseView>
   );
 }
 

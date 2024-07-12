@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 
 import { TabBarLabel } from "@/components/HeadingText";
+import HeaderTitle from "@/components/navigation/HeaderTitle";
 import TabBarIcon from "@/components/navigation/TabBarIcon";
 import { useAppTheme } from "@/providers/UIProvider";
 
@@ -11,7 +12,8 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: theme.colors.primary1,
-        headerShown: false,
+        // headerShown: false,
+        headerTitle: ({ children }) => <HeaderTitle children={children} />,
         tabBarHideOnKeyboard: true,
         tabBarLabel: ({ focused, children }) => (
           <TabBarLabel focused={focused}>{children}</TabBarLabel>
@@ -24,6 +26,16 @@ export default function TabLayout() {
         tabBarItemStyle: {
           height: 62,
         },
+        headerStyle: {
+          backgroundColor: theme.colors.bg2,
+        },
+        headerLeftContainerStyle: {
+          paddingLeft: 12,
+        },
+        headerRightContainerStyle: {
+          paddingRight: 12,
+        },
+        headerShadowVisible: false,
       }}
     >
       <Tabs.Screen

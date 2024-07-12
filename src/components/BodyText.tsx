@@ -17,10 +17,7 @@ export const P2 = ({ style, ...props }: ITextProps) => {
   return (
     <Text
       variant="bodyMedium"
-      style={[
-        { fontFamily: "Inter_500Medium", color: theme.colors.text1 },
-        style,
-      ]}
+      style={[{ fontFamily: "Inter", color: theme.colors.text1 }, style]}
       {...props}
     />
   );
