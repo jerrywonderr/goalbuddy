@@ -15,7 +15,7 @@ const useStepper = () => {
 
   const resetStep = () => setStep(MIN);
 
-  return { step, setStep, nextStep, prevStep, resetStep };
+  return [step, { setStep, nextStep, prevStep, resetStep }] as const;
 };
 
 export default useStepper;

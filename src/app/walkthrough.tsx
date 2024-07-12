@@ -5,7 +5,7 @@ import useStepper from "@/hooks/useStepper";
 import { useAppTheme } from "@/providers/UIProvider";
 
 const WalkthroughScreen = () => {
-  const { step, nextStep } = useStepper();
+  const [step, { nextStep }] = useStepper();
   const theme = useAppTheme();
 
   const render = () => {

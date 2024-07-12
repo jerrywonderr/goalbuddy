@@ -7,13 +7,11 @@ export default function AuthLayout() {
   return (
     <Stack
       screenOptions={{
+        headerTitle: "",
         headerStyle: { backgroundColor: theme.colors.background },
         headerShadowVisible: false,
         headerLeft: (props) => <HeaderBackButton canGoBack={props.canGoBack} />,
       }}
-    >
-      <Stack.Screen name="signup" options={{ headerTitle: "" }} />
-      <Stack.Screen name="signin" options={{ headerTitle: "" }} />
-    </Stack>
+    />
   );
 }

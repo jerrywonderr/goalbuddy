@@ -9,6 +9,7 @@ import PasswordField from "@/components/form/PasswordField";
 import TextField from "@/components/form/TextField";
 import usePreventBackAction from "@/hooks/usePreventBackAction";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { router } from "expo-router";
 import { FormProvider, useForm } from "react-hook-form";
 import * as yup from "yup";
 
@@ -48,7 +49,10 @@ const SignIn = () => {
           </Center>
         </FormProvider>
 
-        <LinkButton style={{ marginHorizontal: "auto", marginVertical: 36 }}>
+        <LinkButton
+          onPress={() => router.push("reset")}
+          style={{ marginHorizontal: "auto", marginVertical: 36 }}
+        >
           Forgot password?
         </LinkButton>
       </BaseScrollView>
