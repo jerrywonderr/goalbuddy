@@ -40,6 +40,17 @@ export const P2Bold = ({ style, ...props }: ITextProps) => {
   );
 };
 
+export const LabelSmall = ({ style, ...props }: ITextProps) => {
+  const theme = useAppTheme();
+  return (
+    <Text
+      variant="labelSmall"
+      style={[{ color: theme.colors.text1 }, style]}
+      {...props}
+    />
+  );
+};
+
 export const SmallText = ({ style, ...props }: ITextProps) => {
   return <Text variant="bodySmall" style={[style]} {...props} />;
 };

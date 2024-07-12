@@ -1,4 +1,4 @@
-import HeaderBackButton from "@/components/HeaderBackButton";
+import HeaderBackButton from "@/components/navigation/HeaderBackButton";
 import { useAppTheme } from "@/providers/UIProvider";
 import { Stack } from "expo-router";
 

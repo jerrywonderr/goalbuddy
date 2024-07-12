@@ -58,6 +58,9 @@ export const lightTheme = {
     light1: "#C6C6C6",
     white: "#fff",
     bg1: "#7b53ff",
+    bg2: "#FCF7FF",
+    primary1: "#C39CFF",
+    grey1: "#eee",
   },
 };
 
@@ -116,5 +119,8 @@ export const darkTheme: typeof lightTheme = {
     light1: "#C6C6C6",
     white: "#fff",
     bg1: "#7b53ff",
+    bg2: "#FCF7FF",
+    primary1: "#C39CFF",
+    grey1: "#eee",
   },
 };

@@ -1,52 +1,65 @@
 import { Tabs } from "expo-router";
 
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
+import { TabBarLabel } from "@/components/HeadingText";
+import TabBarIcon from "@/components/navigation/TabBarIcon";
+import { useAppTheme } from "@/providers/UIProvider";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const theme = useAppTheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: theme.colors.primary1,
         headerShown: false,
+        tabBarHideOnKeyboard: true,
+        tabBarLabel: ({ focused, children }) => (
+          <TabBarLabel focused={focused}>{children}</TabBarLabel>
+        ),
+        tabBarStyle: {
+          backgroundColor: theme.colors.bg2,
+          height: 68,
+          borderTopWidth: 0,
+        },
+        tabBarItemStyle: {
+          height: 62,
+        },
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "home" : "home-outline"}
-              color={color}
-            />
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon="home" />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="goals"
         options={{
-          title: "Explore",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
+          title: "Goals",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon="goal" />
           ),
         }}
       />
       <Tabs.Screen
-        name="playground"
+        name="for_you"
         options={{
-          title: "Playground",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
+          title: "For you",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon="for_you" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} icon="settings" />
           ),
         }}
       />
