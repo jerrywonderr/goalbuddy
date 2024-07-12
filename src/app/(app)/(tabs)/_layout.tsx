@@ -73,6 +73,7 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} icon="settings" />
           ),
+          headerShown: false,
         }}
       />
     </Tabs>
