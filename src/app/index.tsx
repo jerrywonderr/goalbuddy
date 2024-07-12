@@ -1,5 +1,5 @@
-import BaseView from "@/components/BaseView";
 import { H2 } from "@/components/HeadingText";
+import BaseView from "@/components/containers/BaseView";
 import Center from "@/components/containers/Center";
 import YStack from "@/components/containers/YStack";
 import { useAppTheme } from "@/providers/UIProvider";

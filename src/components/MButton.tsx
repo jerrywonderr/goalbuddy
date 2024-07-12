@@ -46,7 +46,6 @@ export const LinkButton = ({
       textColor={theme.colors.text1}
       style={[{ padding: 0 }, style]}
       labelStyle={[styles.linkButtonText, labelStyle]}
-      contentStyle={{ minHeight: 0, backgroundColor: "red" }}
       {...props}
     >
       {children}
@@ -119,13 +118,13 @@ export const OutlinedButton = ({ children, style, ...props }: IMButton) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 4,
+    borderRadius: 8,
   },
   textBase: {
     fontFamily: "Inter_700Bold",
     fontSize: 16,
     lineHeight: 24,
-    paddingHorizontal: 4,
+    paddingHorizontal: 16,
     paddingVertical: 3,
     letterSpacing: 0.5,
   },

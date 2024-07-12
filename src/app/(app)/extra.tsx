@@ -1,4 +1,4 @@
-import BaseView from "@/components/BaseView";
+import BaseView from "@/components/containers/BaseView";
 import { H2 } from "@/components/HeadingText";
 
 const Extra = () => {

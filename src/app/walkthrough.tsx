@@ -1,4 +1,4 @@
-import BaseView from "@/components/BaseView";
+import BaseView from "@/components/containers/BaseView";
 import GettingStarted from "@/features/walkthrough/GettingStarted";
 import Welcome from "@/features/walkthrough/Welcome";
 import useStepper from "@/hooks/useStepper";

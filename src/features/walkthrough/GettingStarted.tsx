@@ -6,6 +6,7 @@ import Center from "@/components/containers/Center";
 import YStack from "@/components/containers/YStack";
 import { FluidImage } from "@/components/image/FluidImage";
 import { useAppTheme } from "@/providers/UIProvider";
+import { router } from "expo-router";
 import { Dimensions, Image, View } from "react-native";
 
 const images = {
@@ -39,7 +40,7 @@ const GettingStarted = () => {
         >
           <YStack style={{ flex: 1, paddingHorizontal: 36, rowGap: 24 }}>
             <RoundedSecondaryButton
-              onPress={() => console.log("Me")}
+              onPress={() => router.push("/signup")}
               icon={() => (
                 <Image source={images.google} height={24} width={24} />
               )}
@@ -47,7 +48,7 @@ const GettingStarted = () => {
               Continue with Google
             </RoundedSecondaryButton>
             <OutlinedButton
-              onPress={() => console.log("Me")}
+              onPress={() => router.push("/signin")}
               icon={() => <Image source={images.mail} height={24} width={24} />}
             >
               Continue with Email

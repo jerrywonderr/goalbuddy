@@ -1,3 +1,4 @@
+import { useAppTheme } from "@/providers/UIProvider";
 import { ReactNode } from "react";
 import { StyleProp, TextStyle } from "react-native";
 import { Text } from "react-native-paper";
@@ -12,14 +13,28 @@ export const P1 = ({ style, ...props }: ITextProps) => {
 };
 
 export const P2 = ({ style, ...props }: ITextProps) => {
-  return <Text variant="bodyMedium" style={[style]} {...props} />;
-};
-
-export const P2Bold = ({ style, ...props }: ITextProps) => {
+  const theme = useAppTheme();
   return (
     <Text
       variant="bodyMedium"
-      style={[{ fontFamily: "Inter_500Medium" }, style]}
+      style={[
+        { fontFamily: "Inter_500Medium", color: theme.colors.text1 },
+        style,
+      ]}
+      {...props}
+    />
+  );
+};
+
+export const P2Bold = ({ style, ...props }: ITextProps) => {
+  const theme = useAppTheme();
+  return (
+    <Text
+      variant="bodyMedium"
+      style={[
+        { fontFamily: "Inter_500Medium", color: theme.colors.text1 },
+        style,
+      ]}
       {...props}
     />
   );
@@ -31,9 +46,19 @@ export const SmallText = ({ style, ...props }: ITextProps) => {
 
 export const SmallLink = ({ style, ...props }: ITextProps) => {
   return (
+    <SmallText
+      style={[{ textDecorationLine: "underline" }, style]}
+      {...props}
+    />
+  );
+};
+
+export const ErrorText = ({ style, ...props }: ITextProps) => {
+  const theme = useAppTheme();
+  return (
     <Text
       variant="bodySmall"
-      style={[{ textDecorationLine: "underline" }, style]}
+      style={[{ color: theme.colors.error }, style]}
       {...props}
     />
   );
